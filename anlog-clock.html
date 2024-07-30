@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <div id="clockContainer">
+    <div id="hour"></div>
+    <div id="minute"></div>
+    <div id="second"></div>
+  </div>
+</body>
+
+</html>
+<style>
+  #clockContainer {
+    position: relative;
+    margin: auto;
+    height: 40vw;
+    /*to make the height and width responsive*/
+    width: 40vw;
+    background: url(https://media.geeksforgeeks.org/wp-content/uploads/20210302161254/imgonlinecomuaCompressToSizeOmNATjUMFKw-300x300.jpg) no-repeat;
+    /*setting our background image*/
+    background-size: 100%;
+  }
+
+  #hour,
+  #minute,
+  #second {
+    position: absolute;
+    background: black;
+    border-radius: 10px;
+    transform-origin: bottom;
+  }
+
+  #hour {
+    width: 1.8%;
+    height: 25%;
+    top: 25%;
+    left: 48.85%;
+    opacity: 0.8;
+  }
+
+  #minute {
+    width: 1.6%;
+    height: 30%;
+    top: 19%;
+    left: 48.9%;
+    opacity: 0.8;
+  }
+
+  #second {
+    width: 1%;
+    height: 40%;
+    top: 9%;
+    left: 49.25%;
+    opacity: 0.8;
+  }
+</style>
+<script>
+  // setInterval(() => {
+  // d = new Date(); //object of date()
+  // hr = d.getHours();
+  // min = d.getMinutes();
+  // sec = d.getSeconds();
+
+  /*
+  calculation of hours
+  12 hours = 360deg
+  1hours = 360/12 = 30deg
+  h hours = 30 *hr
+
+  60min = 30
+  1min = 30/60 = 1/2
+  m min = m/2
+
+  calculate the hours rotation = 30 * hrs + m/2
+  //===========================================
+  calculation of minutes
+  60min = 360deg
+  1min = 6 deg
+  m min = 6 *min
+  //============================================
+  second calulation
+  60sec = 360deg  
+  1s = 6deg
+  s s = 6*s
+  */
+  //   hr_rotation = 30 * hr + min / 2; //converting current time
+  //   min_rotation = 6 * min;
+  //   sec_rotation = 6 * sec;
+
+  //   hour.style.transform = `rotate(${hr_rotation}deg)`;
+  //   minute.style.transform = `rotate(${min_rotation}deg)`;
+  //   second.style.transform = `rotate(${sec_rotation}deg)`;
+  // }, 1000);
+
+
+
+
+  setInterval(ro, 1000);
+
+
+
+  function ro() {
+    var da = new Date();
+    var hr = da.getHours();
+    var min = da.getMinutes();
+    var sec = da.getSeconds();
+
+
+    var hr_rotate = 30 * hr + min / 2
+    var min_rotate = 6 * min
+    var sec_rotate = 6 * sec
+
+    document.getElementById('hour').style.transform = "rotate(" + hr_rotate + "deg)";
+    document.getElementById('minute').style.transform = "rotate(" + min_rotate + "deg)";
+    document.getElementById('second').style.transform = "rotate(" + sec_rotate + "deg)";
+
+
+  }
+</script>
+
